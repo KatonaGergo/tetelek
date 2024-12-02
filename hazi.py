@@ -74,3 +74,36 @@ if szavak:
     print(f"A legrövidebb szó: {legrövidebb}")
 else:
     print("Nem adtál meg szót!")
+
+
+#HGY feladat
+
+date_list = [ '1983-06-15', '1991-12-07', '1987-03-24', '2001-08-19', '2015-04-03', '1980-11-21', '1999-02-28', '2008-09-12', '1995-01-05', '2020-07-09', '1986-10-30', '1993-05-14', '2011-06-26', '1989-12-18', '2005-03-11', '2018-09-01', '1997-07-20', '2012-11-03', '2023-01-22', '1990-04-09' ]
+september_dates = []
+
+
+count_before_2000 = 0
+for date in date_list:
+    year = int(date.split('-')[0])
+    if year < 2000:
+        count_before_2000 += 1
+
+
+for date in date_list:
+    month = int(date.split('-')[1])
+    if month == 9:
+        september_dates.append(date)
+
+latest_year = 0
+for date in date_list:
+    year = int(date.split('-')[0])
+    if year > latest_year:
+        latest_year = year
+
+print(f"2000 előtt {count_before_2000} dátum volt.")
+print("Szeptember hónapra eső dátumok:")
+
+for date in september_dates:
+    print(f"{date}")
+
+print(f"A legutolsó év: {latest_year}")
