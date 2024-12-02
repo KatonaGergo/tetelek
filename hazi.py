@@ -42,3 +42,35 @@ for word in szavak:
 
 print(f"Ennyiszer fordult elő az 'a' vagy az 'A' betű: {a_betu_szamlalo}")
 print(f"Ezekben a szavakban voltak a betűk: {a_betus_szavak}")
+
+
+#Szélsőérték 2. Feladat
+
+szavak = [] 
+
+
+while True:
+    word = input("Adj meg egy szót (vagy nyomj Enter-t a befejezéshez): ")
+    if word == "": 
+        break
+    szavak.append(word)
+
+if szavak:
+    print("A megadott szavak:")
+    for word in szavak:
+        print(word)
+
+    
+    leghosszabb = szavak[0]
+    legrövidebb = szavak[0]
+
+    for word in szavak: 
+        if len(word) > len(leghosszabb):
+            leghosszabb = word
+        if len(word) < len(legrövidebb):
+            legrövidebb = word
+
+    print(f"A leghosszabb szó: {leghosszabb}")
+    print(f"A legrövidebb szó: {legrövidebb}")
+else:
+    print("Nem adtál meg szót!")
